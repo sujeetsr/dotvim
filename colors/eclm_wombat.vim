@@ -22,9 +22,10 @@ endif
 
 " General colors
 hi Cursor           guifg=#000000 gui=none
-hi Normal           guifg=#e6e1de guibg=#2b2b2b gui=none
+"hi Normal           guifg=#e6e1de guibg=#2b2b2b gui=none
+hi Normal           guifg=#e6e1de guibg=#222529 gui=none
 hi NonText          guifg=#808080 guibg=#303030 gui=none
-hi LineNr           guifg=#857b6f guibg=#2b2b2b gui=none
+hi LineNr           guifg=#857b6f guibg=#222529 gui=none
 hi StatusLine       guifg=#f6f3e8 guibg=#444444 gui=italic
 hi StatusLineNC     guifg=#857b6f guibg=#444444 gui=none
 hi VertSplit        guifg=#444444 guibg=#444444 gui=none

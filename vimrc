@@ -11,6 +11,8 @@ set directory=/Users/sujeet/.vimbackup
 set ruler
 set incsearch
 set nohlsearch
+set number
+
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path (vim.org tip #2)
 if has("unix")
