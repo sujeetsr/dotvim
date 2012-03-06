@@ -1,4 +1,6 @@
-set nocompatible
+set nocompatible " Various plugins need this
+set laststatus=2   " Always show the statusline (for powerline)
+set encoding=utf-8 " Necessary to show unicode glyphs (for powerline)
 set gfn=DejaVu\ Sans\ Mono:h12
 set expandtab
 set showmatch

@@ -16,3 +16,6 @@
 [submodule "bundle/vim-jst"]
 	path = bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline
