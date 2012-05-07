@@ -48,6 +48,6 @@ let g:rubycomplete_classes_in_global = 1
 call pathogen#infect()
 syntax on
 filetype plugin indent on
-#colorscheme eclm_wombat
+"colorscheme eclm_wombat
 colorscheme smyck
 
