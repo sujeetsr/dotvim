@@ -34,6 +34,7 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType jst setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -47,5 +48,6 @@ let g:rubycomplete_classes_in_global = 1
 call pathogen#infect()
 syntax on
 filetype plugin indent on
-colorscheme eclm_wombat
+#colorscheme eclm_wombat
+colorscheme smyck
 
