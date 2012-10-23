@@ -26,6 +26,16 @@ endif
 " NERDTree plugin (file explorer)
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
+" RABL
+" treat .rabl files as .rb
+au BufRead,BufNewFile *.rabl setf ruby
+" highlight rabl dsl methods
+au BufRead,BufNewFile *.rabl syn keyword rubyRabl node attribute object child collection attributes glue extends
+au BufRead,BufNewFile *.rabl hi def link rubyRabl Function
+
+" SVG
+au BufRead,BufNewFile *.svg setf xml
+
 " turn completion on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
@@ -39,6 +49,7 @@ autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType jst setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
