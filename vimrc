@@ -14,6 +14,8 @@ set ruler
 set incsearch
 set nohlsearch
 set number
+set guioptions-=T
+set guioptions-=r
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path (vim.org tip #2)
@@ -44,15 +46,20 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType python setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType jst setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xhtml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType txt setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Ruby completion options
 let g:rubycomplete_buffer_loading = 1
