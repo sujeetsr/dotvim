@@ -13,7 +13,7 @@ set directory=/Users/sujeet/.vimbackup
 set ruler
 set incsearch
 set nohlsearch
-set number
+set nonumber
 set guioptions-=T
 set guioptions-=r
 
@@ -68,6 +68,11 @@ let g:rubycomplete_classes_in_global = 1
 call pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" vim-task mapping
+autocmd FileType task noremap <Leader>x :call Toggle_task_status()<CR>
+
 "colorscheme eclm_wombat
 colorscheme smyck
+
 
