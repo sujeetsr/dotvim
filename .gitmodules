@@ -40,3 +40,6 @@
 [submodule "bundle/vim-task"]
 	path = bundle/vim-task
 	url = https://github.com/samsonw/vim-task.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
