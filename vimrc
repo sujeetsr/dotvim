@@ -1,7 +1,7 @@
 set nocompatible " Various plugins need this
 set laststatus=2   " Always show the statusline (for powerline)
 set encoding=utf-8 " Necessary to show unicode glyphs (for powerline)
-set gfn=DejaVu\ Sans\ Mono:h12
+set gfn=DejaVu\ Sans\ Mono:h10
 set expandtab
 set showmatch
 set showmode
@@ -9,7 +9,7 @@ set nobackup
 set nowritebackup
 compiler ruby
 let mapleader = ","
-set directory=/Users/sujeet/.vimbackup
+set directory=/Users/ssreenivasan/.vimbackup
 set ruler
 set incsearch
 set nohlsearch
@@ -75,4 +75,6 @@ autocmd FileType task noremap <Leader>x :call Toggle_task_status()<CR>
 "colorscheme eclm_wombat
 colorscheme smyck
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_cmd = 'CtrlPBuffer'
 
