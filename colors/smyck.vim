@@ -16,7 +16,8 @@ if exists("syntax_on")
   syntax reset
 endif
 
-hi Normal               cterm=none ctermbg=none     ctermfg=15      gui=none        guibg=#242424   guifg=#F7F7F7
+"hi Normal               cterm=none ctermbg=none     ctermfg=15      gui=none        guibg=#242424   guifg=#F7F7F7
+hi Normal               cterm=none ctermbg=none     ctermfg=15      gui=none        guibg=#222A30   guifg=#F7F7F7
 hi LineNr               cterm=none ctermbg=none     ctermfg=8       gui=none        guibg=#242424   guifg=#8F8F8F
 hi StatusLine           cterm=none ctermbg=8        ctermfg=15      gui=none        guibg=#5D5D5D   guifg=#FBFBFB
 hi StatusLineNC         cterm=none ctermbg=15       ctermfg=8       gui=none        guibg=#5D5D5D   guifg=#FBFBFB

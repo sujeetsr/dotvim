@@ -13,9 +13,15 @@ set directory=/Users/ssreenivasan/.vimbackup
 set ruler
 set incsearch
 set nohlsearch
-set nonumber
+set number
 set guioptions-=T
 set guioptions-=r
+
+" Disable visual bell
+set noerrorbells 
+set novisualbell
+set t_vb=
+autocmd! GUIEnter * set vb t_vb=
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path (vim.org tip #2)
@@ -61,6 +67,7 @@ autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType txt setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType groovy setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Ruby completion options
 let g:rubycomplete_buffer_loading = 1
@@ -78,4 +85,3 @@ colorscheme smyck
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_cmd = 'CtrlPBuffer'
-
