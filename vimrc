@@ -1,6 +1,7 @@
 set nocompatible " Various plugins need this
 set laststatus=2   " Always show the statusline (for powerline)
 set encoding=utf-8 " Necessary to show unicode glyphs (for powerline)
+"set gfn=Monaco:h10
 set gfn=Monaco:h10
 set expandtab
 set showmatch
@@ -68,6 +69,7 @@ autocmd FileType txt setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType groovy setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Ruby completion options
 let g:rubycomplete_buffer_loading = 1
@@ -80,8 +82,27 @@ filetype plugin indent on
 " vim-task mapping
 autocmd FileType task noremap <Leader>x :call Toggle_task_status()<CR>
 
-"colorscheme eclm_wombat
-colorscheme smyck
+" colorscheme smyck
+colorscheme fahrenheit
 
+" ctrlp 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_cmd = 'CtrlPBuffer'
+
+" vim-easy-align
+vmap <Enter> <Plug>(EasyAlign)
+
+"set list
+"set listchars=tab:>-
+"
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
