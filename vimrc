@@ -103,11 +103,11 @@ Plug 'tpope/vim-repeat'
 """"""""""""
 " Colors
 """"""""""""
-Plug 'https://github.com/brendonrapp/smyck-vim.git'
+Plug 'brendonrapp/smyck-vim'
+Plug 'fcpg/vim-fahrenheit'
 
 call plug#end()
 
-colorscheme smyck
 
 " syntax on
 " filetype plugin indent on
@@ -127,7 +127,7 @@ nnoremap <leader>t :Files<CR>
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
 
-" Syntastic settings
+" Syntastic 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -152,9 +152,10 @@ highlight link SyntasticStyleWarningSign SignColumn
 " vim-task mapping
 autocmd FileType task noremap <Leader>x :call Toggle_task_status()<CR>
 
-" Mappings
+" Custom Mappings
 map <leader>u :cd /Users/ssreenivasan/code/netflix/moneyball2-ui<CR>
 
+colorscheme smyck
 " JSX in JS
 set background=dark
 
