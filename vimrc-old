@@ -1,8 +1,8 @@
 set nocompatible " Various plugins need this
 set laststatus=2   " Always show the statusline (for powerline)
 set encoding=utf-8 " Necessary to show unicode glyphs (for powerline)
+"set gfn=Monaco:h10
 set gfn=Monaco:h12
-set lazyredraw
 set expandtab
 set showmatch
 set showmode
@@ -17,6 +17,8 @@ set nohlsearch
 set number
 set guioptions-=T
 set guioptions-=r
+
+" Disable visual bell
 set noerrorbells 
 set novisualbell
 set t_vb=
@@ -34,6 +36,13 @@ endif
 
 " NERDTree plugin (file explorer)
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" RABL
+" treat .rabl files as .rb
+au BufRead,BufNewFile *.rabl setf ruby
+" highlight rabl dsl methods
+au BufRead,BufNewFile *.rabl syn keyword rubyRabl node attribute object child collection attributes glue extends
+au BufRead,BufNewFile *.rabl hi def link rubyRabl Function
 
 " SVG
 au BufRead,BufNewFile *.svg setf xml
@@ -65,95 +74,50 @@ autocmd FileType groovy setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html.handlebars setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-"""""""""""""""""""""""""""
-""" Plugins with vim-plug
-"""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+" Ruby completion options
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
 
-""""""""""""
-" Navigation
-""""""""""""
-Plug 'mileszs/ack.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+call pathogen#infect()
+syntax on
+filetype plugin indent on
 
-""""""""""""
-" Git
-""""""""""""
-Plug 'tpope/vim-fugitive'
+" vim-task mapping
+autocmd FileType task noremap <Leader>x :call Toggle_task_status()<CR>
 
-""""""""""""
-" Syntax
-""""""""""""
-Plug 'yalesov/vim-emblem'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script'
-Plug 'vim-syntastic/syntastic'
+" colorscheme smyck
 
-""""""""""""
-" Editing
-""""""""""""
-Plug 'junegunn/vim-easy-align'
-Plug 'Valloric/YouCompleteMe'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-
-""""""""""""
-" Colors
-""""""""""""
-Plug 'https://github.com/brendonrapp/smyck-vim.git'
-
-call plug#end()
-
-colorscheme smyck
-
-" syntax on
-" filetype plugin indent on
-
-""" Plugin settings
-" ack.vim - use ag for searching
-let g:ackprg = 'ag --vimgrep --smart-case'                                                   
-cnoreabbrev ag Ack                                                                           
-cnoreabbrev aG Ack                                                                           
-cnoreabbrev Ag Ack                                                                           
-cnoreabbrev AG Ack  
-
-" FZF
-nnoremap <leader>; :Buffers<CR>
-nnoremap <leader>t :Files<CR>
+" ctrlp 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
+
+"set list
+"set listchars=tab:>-
+"
 
 " Syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
- 
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
-let g:syntastic_error_symbol = '✗✗'
-let g:syntastic_style_error_symbol = '✠✠'
+let g:syntastic_error_symbol = '<U+274C>'
+let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '⚠️'
- 
+
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
-
-" vim-task mapping
-autocmd FileType task noremap <Leader>x :call Toggle_task_status()<CR>
-
-" Mappings
-map <leader>u :cd /Users/ssreenivasan/code/netflix/moneyball2-ui<CR>
 
 " JSX in JS
 set background=dark
