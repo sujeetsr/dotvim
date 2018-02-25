@@ -26,9 +26,9 @@ autocmd! GUIEnter * set vb t_vb=
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path (vim.org tip #2)
 if has("unix")
-    map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+    map ,f :e <C-R>=expand("%:p:h") . "/" <CR>
 else
-    map ,e :e <C-R>=expand("%:p:h") . "\" <CR>
+    map ,f :e <C-R>=expand("%:p:h") . "\" <CR>
 endif
 
 " NERDTree plugin (file explorer)
@@ -77,7 +77,7 @@ Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-
+Plug 'mustache/vim-mustache-handlebars'
 """"""""""""
 " Git
 """"""""""""
@@ -92,7 +92,7 @@ Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
 " Plug 'vim-syntastic/syntastic'
 Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'https://github.com/adelarsq/vim-matchit' 
+Plug 'adelarsq/vim-matchit' 
 
 """"""""""""
 " Editing
@@ -121,6 +121,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/camelcasemotion'
+
 """"""""""""
 " Colors
 """"""""""""
@@ -131,6 +133,7 @@ call plug#end()
 
 syntax on
 filetype plugin indent on
+filetype plugin on
 
 """ Plugin settings
 
